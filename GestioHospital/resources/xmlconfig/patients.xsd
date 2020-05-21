@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="patients">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="patient" type="patient" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="patient">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="surnames" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="age" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tel" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="genre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="descripStatus" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="dni" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="bloodType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="status" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>

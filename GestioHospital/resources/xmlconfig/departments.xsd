@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="departments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="department" type="department" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="department">
+        <xs:sequence>
+            <xs:element name="doctors" type="doctors" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="doctors">
+        <xs:sequence>
+            <xs:element name="doctor" type="doctor" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="doctor">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="surnames" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="age" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tel" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="genre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="speciality" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="schedule" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="extra" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="num_col" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
